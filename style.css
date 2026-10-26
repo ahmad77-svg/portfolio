@@ -2288,3 +2288,16 @@ html[dir="rtl"] .hero-index{right:auto;left:5%}
 html[dir="rtl"] .profile-logo .profile-name {font-family:"Manrope",sans-serif;direction:ltr;unicode-bidi:isolate;}
 @media (max-width:700px) { .site-header .profile-logo {gap:7px;} .profile-logo img {width:38px;height:38px;flex-basis:38px;} .profile-logo .profile-name {font-size:11px;} }
 @media (max-width:420px) { .profile-logo .profile-name {display:none;} .site-header .profile-logo {flex-shrink:0;} }
+
+/* 2026 portfolio refresh: deep navy, porcelain, soft cyan */
+:root { --bg:#f4f6f8; --dark:#101e30; --muted:#637488; --line:rgba(16,30,48,.16); --white:#ffffff; --accent:#9cdef2; }
+.site-header.scrolled { background:rgba(244,246,248,.9); }
+.services-section {background:#e7edf2;}
+.hero::after {filter:blur(5px);opacity:.82;}
+.profile-logo img {border-color:rgba(16,30,48,.2);}
+/* Accessible, subtle page entrance without blocking navigation */
+@media (prefers-reduced-motion: no-preference) {
+  .site-header {animation:headerReveal .7s ease both;}
+  @keyframes headerReveal {from {opacity:0;transform:translateY(-12px)}to {opacity:1;transform:translateY(0)}}
+}
+@media (prefers-reduced-motion: reduce) { .reveal-item {opacity:1!important;transform:none!important;transition:none!important;} }
